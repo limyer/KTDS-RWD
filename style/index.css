@@ -133,9 +133,106 @@ fieldset {
     color: var(--white);
     order: -1;
   }
+  
   /* 모바일 검색폼 */
   .searchForm__group .formInput {
     flex-grow: 1;
+  }
+
+  /* 모바일 메인 메뉴 제어 버튼 */
+  .buttonWrapper {
+    position: absolute;
+    right: var(--spacing-md);
+    top: 3.5rem;
+    overflow: hidden;
+    padding: 0.25rem;
+  }
+
+  .button--burger {
+    position: relative;
+    display: block;
+    width: 1.875rem;
+    height: 1.875rem;
+  }
+
+  .button--burger:focus {
+    outline-offset: 2px;
+  }
+
+  .button--burgerBarTop,
+  .button--burgerBarMiddle,
+  .button--burgerBarBottom {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    background: var(--white);
+    border-radius: 1.5rem;
+    transition: all 400ms;
+  }
+
+  .button--burgerBarTop {
+    top: 0;
+  }
+
+  .button--burgerBarMiddle {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .button--burgerBarBottom {
+    top: 100%;
+    transform: translateY(-100%);
+  }
+
+  .button--burger.is--active .button--burgerBarTop {
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+  }
+
+  .button--burger.is--active .button--burgerBarMiddle {
+    transform: translate(-120%, -50%);
+  }
+
+  .button--burger.is--active .button--burgerBarBottom {
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+  }
+
+  /* 모바일 메인 메뉴 */
+  .menu__list {
+    background: var(--accent-opacity-color);
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 100vh;
+    backdrop-filter: blur(4px);
+    padding: var(--spacing-lg);
+    transform: translateX(-150%);
+    transition: all 400ms;
+  }
+
+  .menu.is--active .menu__list {
+    transform: none;
+  }
+
+  .menu__item {
+    border-bottom: 1px solid var(--black);
+  }
+
+  /* 모바일 메인 콘텐츠 */
+  .appMain {
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    gap: var(--spacing-base);
+  }
+
+  /* 모바일 푸터 */
+  .address {
+    display: flex;
+    flex-flow: column nowrap;
   }
 }
 
