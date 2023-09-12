@@ -41,7 +41,7 @@ body {
 /* 공통 헤더 */
 .appHeader {
   position: relative;
-  padding: var(--spacing-base) var(--spacing-lg) 0;
+  padding: var(--spacing-base) var(--spacing-lg);
 }
 
 /* 공통 로고 */
@@ -133,7 +133,6 @@ fieldset {
     color: var(--white);
     order: -1;
   }
-  
   /* 모바일 검색폼 */
   .searchForm__group .formInput {
     flex-grow: 1;
@@ -168,7 +167,7 @@ fieldset {
     height: 20%;
     background: var(--white);
     border-radius: 1.5rem;
-    transition: all 400ms;
+    transition: all 200ms;
   }
 
   .button--burgerBarTop {
@@ -198,54 +197,23 @@ fieldset {
     top: 50%;
     transform: translateY(-50%) rotate(-45deg);
   }
-
-  /* 모바일 메인 메뉴 */
-  .menu__list {
-    background: var(--accent-opacity-color);
-    position: fixed;
-    z-index: 100;
-    top: 0;
-    left: 0;
-    width: 70%;
-    height: 100vh;
-    backdrop-filter: blur(4px);
-    padding: var(--spacing-lg);
-    transform: translateX(-150%);
-    transition: all 400ms;
-  }
-
-  .menu.is--active .menu__list {
-    transform: none;
-  }
-
-  .menu__item {
-    border-bottom: 1px solid var(--black);
-  }
-
-  /* 모바일 메인 콘텐츠 */
-  .appMain {
-    grid-template-columns: 100%;
-    grid-template-rows: auto;
-    gap: var(--spacing-base);
-  }
-
-  /* 모바일 푸터 */
-  .address {
-    display: flex;
-    flex-flow: column nowrap;
-  }
 }
 
 /* 데스크탑 디바이스 */
 @media (min-width: 768px) {
+    /* 데스크탑 공통 */
+
+    .appHeader, .menu__list, .appMain, .appFooter{
+        max-width: var(--container-width);
+        margin-left: auto;
+        margin-right: auto;
+    }
+
   /* 데스크탑 헤더 */
   .appHeader {
     display: grid;
     grid-template-columns: 204px 1fr;
     gap: var(--spacing-base);
-    max-width: var(--container-width);
-    margin-left: auto;
-    margin-right: auto;
   }
   /* 데스크탑 로고 */
   .logo {
@@ -269,5 +237,30 @@ fieldset {
   /* 데스크탑 메인 메뉴 제어 버튼 */
   .buttonWrapper {
     display: none;
+  }
+
+  /* 데스크탑 메인 메뉴 */
+  .menu {
+    background: var(--secondary-color);
+    padding: var(--spacing-base) var(--spacing-lg);
+  }
+  
+  .menu__list {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    color: var(--white);
+  }
+
+  .menu__item{
+    display: block;
+    padding: 0.5rem;
+  }
+
+  .menu__link {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 700;
+    padding: 1rem
   }
 }
