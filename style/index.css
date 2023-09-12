@@ -22,6 +22,11 @@
     border-width: 0;
  }
  
+ /* 컨테이너 */
+.container{
+    min-width: 16.25rem;
+}
+
 /* 헤더 */
 .appHeader{
     background-color: var(--primary-color);
@@ -38,7 +43,7 @@
 
  .logo__link{
     display:block;
-    width:12.75rem;
+    width:13.25rem;
     height: 3.75rem;
     background-image: url("../images/webcafe-logo@2x.png");
     background-size: cover;
@@ -57,3 +62,24 @@
     width: 100%;
  }
 
+ .searchForm__group{
+    display: flex;
+    gap: var(--spacing-sm);
+ }
+
+ .formInput {
+    background-color: yellow;
+    flex-grow: 1;
+    
+    /* &__input{
+        width: 100%;
+    } */
+ }
+
+.formInput__input{
+    width: 100%;
+}
+
+.searchForm .button {
+    white-space: nowrap;
+}
