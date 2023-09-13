@@ -120,7 +120,6 @@ fieldset {
 
 /* 공통 메인 메뉴 */
 .menu__list {
-  background: #ff0;
   padding: var(--spacing-lg);
 }
 
@@ -136,22 +135,6 @@ fieldset {
 }
 
 /* 공통 메인 콘텐츠 */
-/* .book {
-  background: yellow;
-}
-.news {
-  background: pink;
-}
-.board {
-  background: skyblue;
-}
-.twitter {
-  background: lime;
-}
-.favorite {
-  background: salmon;
-} */
-
 /* 공통 메인 콘텐츠 제목 */
 .sprite {
   background: url(./../images/sprite_main.png) no-repeat;
@@ -194,64 +177,70 @@ fieldset {
 .accentTwitter {
   color: var(--accent-twitter);
 }
-
-.appMain [class*="__title"] {
+.appMain [class*='__title'] {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   margin-bottom: var(--spacing-base);
+  font-weight: 700;
 }
 
-.appMain [class*="__koTitle"] {
+.appMain [class*='__koTitle'] {
   font-size: var(--text-md);
 }
 
-.appMain [class*="__enTitle"] {
+.appMain [class*='__enTitle'] {
   font-weight: 400;
   font-size: var(--text-base);
 }
 
-.appMain [class*="__summary"] {
+.appMain [class*='__summary'] {
   line-height: 1.5;
   margin-top: var(--spacing-base);
 }
-
-.news__videoContainer .iframeWrapper{
-  aspect-ratio: 16 / 9;
+/* 공통 추천서적 */
+.book__cover {
+  width: 60%;
+  text-align: center;
+  margin: 0 auto;
 }
 
-.news__videoContainer iframe{
+.book__coverCaption {
+  margin-top: var(--spacing-sm);
+}
+
+.book__info {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.ratingStar {
+  font-size: var(--text-lg);
+}
+
+/* 공통 새소식 */
+.iframeWrapper {
+  position: relative;
+  padding-top: 56.25%;
+}
+
+iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
   width: 100%;
   height: 100%;
 }
 
-/* 공통 트위터 */
-.twitter__container{
-  display: flow-root;
+.news__date {
+  display: block;
+  text-align: right;
+  margin-top: var(--spacing-sm);
 }
 
-.twitter__userInfo{
-  display: inline-flex;
-}
-
-.twitter__userProfile{
-  width: 25%;
-  float: right;
-  shape-outside: circle(50%);
-  width: clamp(60px, 20%, 80px);
-  shape-margin: 1em;
-}
-
-.twitter__userProfileImage{
-  border-radius: 50%;
-  aspect-ratio: 1/1;
-  object-fit: cover;
-  object-position: 30% 40%;
-}
-
-.twitter__summary {
-  margin: var(--spacing-sm) 0 var(--spacing-xs) 0;
-}
 
 /* 모바일 디바이스 */
 @media (min-width: 320px) and (max-width: 767px) {
